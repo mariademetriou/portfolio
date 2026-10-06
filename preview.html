@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Maria Demetriou Portfolio — Interactive Preview</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#0f1020;color:#fff;height:100vh;overflow:hidden}.preview{height:100vh;display:grid;grid-template-rows:auto 1fr}.bar{display:flex;gap:12px;align-items:center;padding:12px 16px;background:#151629;border-bottom:1px solid rgba(255,255,255,.1);box-shadow:0 8px 28px rgba(0,0,0,.18);z-index:2}.title{font-weight:800;margin-right:auto;white-space:nowrap}.select-wrap{display:flex;gap:8px;align-items:center}.select-wrap label{font-size:12px;color:#b7b8c9;font-weight:700}.select-wrap select{appearance:none;border:1px solid rgba(255,255,255,.14);background:#22233a;color:#fff;border-radius:10px;padding:10px 36px 10px 12px;font-weight:700;max-width:320px}.open{color:#fff;text-decoration:none;border:1px solid rgba(255,255,255,.14);padding:9px 12px;border-radius:10px;font-size:13px;font-weight:700;background:linear-gradient(135deg,#6c4df6,#2563ff)}iframe{width:100%;height:100%;border:0;background:#fff}@media(max-width:700px){.bar{flex-wrap:wrap}.title{width:100%}.select-wrap{flex:1}.select-wrap select{width:100%}.open{white-space:nowrap}}
+  </style>
+</head>
+<body>
+<div class="preview">
+  <div class="bar">
+    <div class="title">Maria Demetriou — Full Website Preview</div>
+    <div class="select-wrap"><label for="pageSelect">Page</label><select id="pageSelect">
+      <option value="index.html">Home</option>
+      <option value="work.html">Work</option>
+      <option value="case-studies/complytek.html">Case Study — Complytek</option>
+      <option value="case-studies/brideloop.html">Case Study — BrideLoop</option>
+      <option value="case-studies/rng.html">Case Study — RnG</option>
+      <option value="projects/hills.html">Project — Hill's Pet Nutrition</option>
+      <option value="projects/bank-of-cyprus.html">Project — Bank of Cyprus</option>
+      <option value="projects/collaroid.html">Project — Collaroid</option>
+      <option value="social-blueprint.html">Social Blueprint</option>
+      <option value="content.html">Additional Creative Work</option>
+      <option value="about.html">About</option>
+      <option value="contact.html">Contact</option>
+    </select></div>
+    <a class="open" id="openPage" href="index.html" target="_blank" rel="noopener noreferrer">Open page ↗</a>
+  </div>
+  <iframe id="siteFrame" src="index.html" title="Maria Demetriou portfolio website preview"></iframe>
+</div>
+<script>
+  const select=document.getElementById('pageSelect');const frame=document.getElementById('siteFrame');const open=document.getElementById('openPage');
+  select.addEventListener('change',()=>{frame.src=select.value;open.href=select.value});
+</script>
+</body>
+</html>
